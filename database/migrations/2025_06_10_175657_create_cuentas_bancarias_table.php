@@ -16,8 +16,8 @@ return new class extends Migration
             $table->double('saldo', 8, 2);
             $table->tinyInteger('habilitada');
 
-            $table->foreignId('banco_id')->constrained('bancos')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('banco_id')->constrained('bancos');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

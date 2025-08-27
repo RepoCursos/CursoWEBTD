@@ -1,15 +1,17 @@
 <?php
 
 use App\Http\Controllers\ComentariosController;
+use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QueryBuilderController;
 use App\Http\Controllers\RawSqlQueriesController;
 use App\Http\Controllers\VideosController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () { return view('welcome');});
+
+//Ruta para demostrar el metodo __invoke()
+Route::get('/', PrincipalController::class)->name('home');
 
 //Si declaramos otra funcion dentro de nuestro controlador y queremos mantener "Route::resource" entonces tenemos que declarar 
 //antes las rutas con las funciones adicionales al tipico crud 

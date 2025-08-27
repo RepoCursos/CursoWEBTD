@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cantidad_visitas');
             $table->double('ganancia_generada', 8, 2);
 
-            $table->foreignId('video_id')->constrained('videos')->onDelete('cascade');
+            $table->foreignId('video_id')->constrained('videos');
             $table->timestamps();
         });
     }

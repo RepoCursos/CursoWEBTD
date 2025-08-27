@@ -17,9 +17,9 @@ return new class extends Migration
             $table->text('descripcion');
             $table->tinyInteger('publicado');
 
-            $table->foreignId('pais_id')->constrained('paises')->onDelete('cascade');
-            $table->foreignId('plataforma_id')->constrained('plataformas')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('pais_id')->constrained('paises');
+            $table->foreignId('plataforma_id')->constrained('plataformas');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

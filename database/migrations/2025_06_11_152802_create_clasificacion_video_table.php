@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('clasificacion_video', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('clasificacion_id')->constrained('clasificaciones')->onDelete('cascade');
-            $table->foreignId('video_id')->constrained('videos')->onDelete('cascade');
+            $table->foreignId('clasificacion_id')->constrained('clasificaciones');
+            $table->foreignId('video_id')->constrained('videos');
             $table->timestamps();
         });
     }

@@ -10,9 +10,15 @@ class Video extends Model
     use HasFactory;
 
     protected $fillable = [
-        'video',
-        'plataforma'
+        'titulo',
+        'descripcion',
+        'publicado'
     ];
+
+    public function pais()
+    {
+        return $this->belongsTo(Pais::class);
+    }
 
     // Esto funcion con el metodo 'getRouteKeyName' nos permite cambiar el nombre de la columna que se va a usar para 
     // buscar el registro en la base de datos en lugar del id que es el que se usa por defecto

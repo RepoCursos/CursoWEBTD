@@ -26,18 +26,25 @@
             <form class="mb-3 row" method="POST" action="{{ route('videos.store') }}">
                 @csrf
                 <div class="mb-3 row">
-                    <label for="video" class="col-sm-2 col-form-label">Video</label>
+                    <label for="titulo" class="col-sm-2 col-form-label">Titulo</label>
                     <div class="col-sm-6">
-                        <input type="text" name="video" value="{{ old('video') }}" class="form-control">
+                        <input type="text" name="titulo" value="{{ old('titulo') }}" class="form-control">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="plataforma" class="col-sm-2 col-form-label">Plataforma</label>
+                    <label for="descripcion" class="col-sm-2 col-form-label">Descripcion</label>
                     <div class="col-sm-6">
-                        <input type="text" name="plataforma" value="{{ old('plataforma') }}" class="form-control">
+                        <input type="text" name="descripcion" value="{{ old('descripcion') }}" class="form-control">
                     </div>
                 </div>
                 <div class="mb-3 row">
+                    <label for="publicado" class="col-sm-2 col-form-label">Publicado</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="publicado" value="{{ old('publicado') }}" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <a href="{{ route('videos.index') }}" class="btn btn-secondary mb-3 col-sm-2 me-3">Cancelar</a>
                     <button type="submit" class="btn btn-primary mb-3 col-sm-2">Guardar</button>
                 </div>
             </form>

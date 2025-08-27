@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('comentario', 150);
             $table->tinyInteger('publicado');
 
-            $table->foreignId('video_id')->constrained('videos')->onDelete('cascade');
+            $table->foreignId('video_id')->constrained('videos');
             $table->timestamps();
         });
     }

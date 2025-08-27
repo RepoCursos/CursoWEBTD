@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('telefono', 40);
             $table->string('email', 50);
 
-            $table->foreignId('plataforma_id')->constrained('plataformas')->onDelete('cascade');
+            $table->foreignId('plataforma_id')->constrained('plataformas');
             $table->timestamps();
         });
     }

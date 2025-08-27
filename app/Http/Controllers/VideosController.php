@@ -35,6 +35,16 @@ class VideosController extends Controller
         return view('videos.create');
     }
 
+    public function edit(Video $video): View
+    {
+        return view('videos.edit', compact('video'));
+    }
+
+    public function show(Video $video): View
+    {
+        return view('videos.show', compact('video'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -44,16 +54,6 @@ class VideosController extends Controller
 
         Video::create($request->all());
         return redirect()->route('videos.create')->with('success', 'Video Guardado');
-    }
-
-    public function show(Video $video): View
-    {
-        return view('videos.show', compact('video'));
-    }
-
-    public function edit(Video $video): View
-    {
-        return view('videos.edit', compact('video'));
     }
 
     public function update(Request $request, Video $video)
