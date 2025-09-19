@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('informacion_contacto', function (Blueprint $table) {
+        Schema::create('informacion_contactos', function (Blueprint $table) {
             $table->id();
-            $table->string('telefono', 40);
-            $table->string('email', 50);
+            $table->string('telefono', 50)->unique();
+            $table->string('email', 50)->nullable()->unique();
 
             $table->foreignId('plataforma_id')->constrained('plataformas');
             $table->timestamps();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('informacion_contacto');
+        Schema::dropIfExists('informacion_contactos');
     }
 };

@@ -4,20 +4,29 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Video extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
+/*
     protected $fillable = [
         'titulo',
         'descripcion',
         'publicado'
     ];
-
+*/
     public function pais()
     {
         return $this->belongsTo(Pais::class);
+    }
+
+    public function clasificaciones(): BelongsToMany
+    {
+        return $this->belongsToMany(Clasificacion::class, 'clasificacion_video');
     }
 
     // Esto funcion con el metodo 'getRouteKeyName' nos permite cambiar el nombre de la columna que se va a usar para 

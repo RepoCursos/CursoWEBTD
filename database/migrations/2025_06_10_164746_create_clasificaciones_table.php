@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('clasificaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('clasificacion', 5);
-            $table->string('descripcion', 100);
+            $table->string('clasificacion', 5)->unique();
+            $table->text('descripcion');
             $table->timestamps();
         });
     }

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('paises', function (Blueprint $table) {
             $table->id();
-            $table->string('pais', 100);
-            $table->string('codigo', 10);
+            $table->string('pais', 100)->unique();
+            $table->string('codigo', 10)->nullable()->unique();
             $table->timestamps();
         });
     }

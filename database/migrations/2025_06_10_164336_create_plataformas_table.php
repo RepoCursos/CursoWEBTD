@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('plataformas', function (Blueprint $table) {
             $table->id();
-            $table->string('plataforma', 100);
+            $table->string('plataforma', 100)->unique();
             $table->timestamps();
         });
     }

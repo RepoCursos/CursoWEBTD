@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cuentas_bancarias', function (Blueprint $table) {
+        Schema::create('cuenta_bancarias', function (Blueprint $table) {
             $table->id();
-            $table->double('saldo', 8, 2);
+            $table->double('saldo');
             $table->tinyInteger('habilitada');
 
             $table->foreignId('banco_id')->constrained('bancos');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cuentas_bancarias');
+        Schema::dropIfExists('cuenta_bancarias');
     }
 };

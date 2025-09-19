@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detalles_video', function (Blueprint $table) {
+        Schema::create('detalle_videos', function (Blueprint $table) {
             $table->id();
-            $table->string('duracion', 50);
+            $table->string('duracion', 50)->nullable();
             $table->timestamp('fecha_publicacion');
             $table->enum('extencion', ['.mp4', '.mov', '.wmv']);
-            $table->string('dimensiones', 100);
+            $table->string('dimensiones', 100)->nullable();
             $table->unsignedBigInteger('cantidad_visitas');
-            $table->double('ganancia_generada', 8, 2);
+            $table->double('ganancia_generada');
 
             $table->foreignId('video_id')->constrained('videos');
             $table->timestamps();
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detalles_video');
+        Schema::dropIfExists('detalle_videos');
     }
 };
